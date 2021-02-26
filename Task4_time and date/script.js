@@ -1,47 +1,40 @@
+currentDate = new Date();
+
+
+var one_day=1000*60*60*24; //millisecond in one day
+
 let submit = document.getElementById("submit");
+let eventName = document.getElementById("event-name").value;
+let endDate = document.getElementById("end-date").value;
+let printEventNameDays = document.getElementById("eventdate");
+let businessdaycount = document.getElementById("businessDay")
 
-
-
-submit.addEventListener("click", get)
-/**function get() count how many days in between current dat and event date */
-function get (){
-
-    let endDate = document.getElementById("end-date").value;
-    let eventName = document.getElementById("event-name").value;
-    let eventdate = document.getElementById("eventdate");
-    currentDate = new Date();
-    eventDate = new Date(endDate);  
-    
-var one_day=1000*60*60*24;
-//console.log(one_day);
-let calculatedate = (Math.ceil((eventDate.getTime()-currentDate.getTime())/(one_day)));
-
-eventdate.textContent =`The date remaining for ${eventName} is ${calculatedate} days`;
-/*
+eventDate = new Date(endDate); //event end date from user 
+console.log(eventDate);
+let calculatedays = (Math.ceil((eventDate.getTime()-currentDate.getTime())/(one_day)));
+console.log(calculatedays);
+/** Business days count */
 let count = 0;
-for ( let i = 0; i < calculatedate; i++ ) {
 
-    if (currentDate.getDay() === 0 && currentDate.getDay() === 6){
-       count ++;
-
+for ( let i = 0; i <= calculatedays; i++ ) {
+    var future = new Date(); //get current date
+    let date = (new Date(future.setDate(future.getDate() + i))); //increase day by i
+    //console.log(date); //print increase date
+    let day = (date.getDay()) //this will get day from the date 
+    console.log(day)
+    if (day === 0 || day === 6) //it will chaeck sunday and saturday
+        {
+        count ++; //if found sunday and saturday count will increase
+        }
     }
-    console.log(calculatedate - count);
-    }*/
+//console.log(count);
+let businessD = calculatedays- count;
+console.log(businessD);
+/**function get() count how many days in between current dat and event date */
 
-
+function get (){
+    printEventNameDays.textContent =`The date remaining for ${eventName} is ${calculatedays} days`;
+    
+    businessDay.textContent = `The business days left ${businessD}.`
 }
-/*
-function businessDayCount() {
-    let count = 0;
-
-    if ()
-}
-var cmas=new Date(today.getFullYear(), 11, 25);
-if (today.getMonth()==11 && today.getDate()>25) 
-{
-cmas.setFullYear(cmas.getFullYear()+1); 
-}  
-var one_day=1000*60*60*24;
-console.log(Math.ceil((cmas.getTime()-today.getTime())/(one_day))+
-" days left until Christmas!");
- */
+submit.addEventListener("click", get)
