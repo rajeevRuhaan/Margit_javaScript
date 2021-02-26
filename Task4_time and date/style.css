@@ -1,8 +1,11 @@
 div {
   padding: 20px;
 }
-#eventdate {
-  font-size: 20px;
+body {
+  background-color: cadetblue;
+}
+#eventdate,
+#businessDay {
   color: brown;
   font-weight: bold;
 }

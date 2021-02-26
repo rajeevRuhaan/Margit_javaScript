@@ -10,21 +10,31 @@
   <body>
     <div class="container">
       <div>
+        <div><h2>Welcome to event countdown page.</h2></div>
+        <p id="demo1"></p>
+        <button id="timer">Count Down Timer</button>
+      </div>
+
+      <div>
         <h2>Enter event name and date</h2>
         <label for="event-name">Event-Name</label>
         <input type="text" id="event-name" />
       </div>
+
       <div>
         <label for="end-date">End-date</label>
         <input type="date" id="end-date" />
         <input type="submit" id="submit" />
+        <p id="eventdate"></p>
       </div>
-      <p id="eventdate"></p>
+
+      <div>
+        <h2>Business days left from today until the end date</h2>
+        <p id="businessDay"></p>
+      </div>
     </div>
-    <div class="container">
-      <h2>Business days left from today until the end date</h2>
-      <p id="businessDay"></p>
-    </div>
+
     <script src="script.js"></script>
+    <script src="script3.js"></script>
   </body>
 </html>

@@ -1,18 +1,16 @@
 
-let calculatedate = 30;
-let currentDate = new Date();
 let count = 0;
 
-console.log("current", currentDate)
-
-
-for ( let i = 0; i < calculatedate; i++ ) {
-    
-if (currentDate.getDay() === 0 || currentDate.getDay() === 6){
-      currentDate.getDate() + 1
-    count ++;
-
+for ( let i = 0; i <= 10; i++ ) {
+    var future = new Date(); //get current date
+    let date = (new Date(future.setDate(future.getDate() + i))); //increase day by i
+    console.log(date); //print increase date
+    let day = (date.getDay()) //this will get day from the date 
+    console.log(day)
+    if (day === 0 || day === 6) //it will chaeck sunday and saturday
+        {
+        count ++; //if found sunday and saturday count will increase
+        }
     }
-   console.log( currentDate.setDate(currentDate.getDate() + 1));
-    console.log("Count",count, (calculatedate - count));
-    }
+console.log(count);
+
