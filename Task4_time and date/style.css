@@ -1,11 +1,24 @@
-div {
-  padding: 20px;
+* {
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
 }
+
 body {
-  background-color: cadetblue;
+  background: url("https://source.unsplash.com/fwsXlkNkwhI/1500*900") no-repeat
+    fixed center center/cover;
 }
-#eventdate,
-#businessDay {
-  color: brown;
-  font-weight: bold;
+h2 {
+  text-align: center;
+  margin: 5rem;
+}
+label {
+  width: 200px;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+p {
+  margin: 10px;
+  font-size: 16px;
+  text-align: center;
 }
