@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to right, #44b6d3, #3a4422);
+
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: aliceblue;
+  text-align: center;
+}
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin-top: 40px;
+  margin-right: 10px;
+  padding: 30px;
+}
+#start,
+#stop {
+  margin-top: 50px;
+  padding: 10px;
+  color: blue;
+  background-color: rgb(221, 117, 117);
+}
