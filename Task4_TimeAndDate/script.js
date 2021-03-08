@@ -36,6 +36,6 @@ function get() {
   /** print in windows eventdate and businessdaycount */
   eventdate.textContent = `The date remaining for ${eventName} is ${calculatedate} days`;
 
-  businessdaycount.textContent = `The business days left ${businessD}.`;
+  businessdaycount.textContent = `Business days left from today until the end date ${businessD}.`;
 }
 submit.addEventListener("click", get);
