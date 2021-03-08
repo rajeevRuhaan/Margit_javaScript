@@ -1,0 +1,19 @@
+body {
+  font-size: 24px;
+  background-color: aquamarine;
+  margin: 100px 50px;
+  font-family: "Raleway", sans-serif;
+  box-sizing: border-box;
+}
+.container {
+  background: rgb(240, 30, 30);
+  width: 500px;
+  margin: 100px auto;
+  padding: 40px;
+  border-radius: 5px;
+  text-align: center;
+}
+.mb20 {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
