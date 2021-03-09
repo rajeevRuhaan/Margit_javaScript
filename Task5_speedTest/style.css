@@ -25,9 +25,12 @@ body {
   margin-top: 40px;
   margin-right: 10px;
   padding: 30px;
+  pointer-events: none;
 }
 .dot.active {
   background-color: blue;
+  background-image: url("Star.svg") /* no-repeat  fixed
+  center center/cover */;
 }
 
 #start,

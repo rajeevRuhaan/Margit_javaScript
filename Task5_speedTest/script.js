@@ -6,14 +6,17 @@ let start = document.getElementById("start");
 let stop = document.getElementById("stop");
 let close = document.getElementById("close");
 
-count = 0;
+let count = 0;
 let active = 0;
+var mySound;
 
 /* dot.forEach(function (event) {
   dot.addEventListener("click", function () {
     count.push(event.innerHTML);
   });
 }); */
+
+/** finding dot position */
 dot[0].onclick = function () {
   clicked(0);
 };
@@ -27,46 +30,82 @@ dot[3].onclick = function () {
   clicked(3);
 };
 
+/** Count the click */
 const clicked = (i) => {
   console.log("clicked:", i);
   count++;
+
   scoredisplay.textContent = `Your score is ${count}`;
+  if (i != active) {
+    return endgame();
+  }
 };
 
+/** random no generator */
 const getRandonInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
+/**** Sound constructor */
+function sound(src) {
+  this.sound = document.createElement("audio");
+  this.sound.src = src;
+  this.sound.setAttribute("preload", "auto");
+  this.sound.setAttribute("controls", "none");
+  this.sound.style.display = "none";
+  document.body.appendChild(this.sound);
+  this.play = function () {
+    this.sound.play();
+  };
+  this.stop = function () {
+    this.sound.pause();
+  };
+}
+mySound = new sound("rockman9.mp3");
+myStop = new sound("endGame.mp3");
+
+/**Start game */
 const startGame = () => {
   console.log("Game Started");
-
-  let nextActive = pickNext();
-  console.log(dot[nextActive]);
-
-  if (clicked() != nextActive) {
-    return endgame();
+  mySound.play();
+  /***   pointer auto */
+  for (let i = 0; i < dot.length; i++) {
+    dot[i].style.pointerEvents = "auto";
   }
 
-  dot[nextActive].classList.toggle("active");
+  let nextActive = pickNext(active);
+  console.log(nextActive);
+
+  //pointer event changes from none to auto.
+
+  dot[nextActive].classList.add("active");
   dot[active].classList.remove("active");
 
   active = nextActive;
   console.log(active);
+
   timer = setTimeout(startGame, 1000);
 
-  function pickNext() {
+  function pickNext(active) {
     let nextActive = getRandonInt(0, 3);
     if (nextActive != active) {
       return nextActive;
-    } else pickNext(active);
+    } else {
+      pickNext(active);
+    }
   }
+  /*  if (clicked() != active) {
+    return endgame();
+  } */
 };
 const endgame = () => {
   clearTimeout(timer);
+  mySound.stop();
+  myStop.play();
   console.log("game over");
   overlay.style.visibility = "visible";
 
-  gameover.textContent = `Your score is ${score}`;
+  gameover.textContent = `Your score is ${count}`;
 };
 const reloadGame = () => {
   console.log("close");
@@ -78,6 +117,6 @@ const stopGame = () => {
   window.location.reload();
 };
 
-stop.addEventListener("click", stopGame);
+/* stop.addEventListener("click", endgame); */
 close.addEventListener("click", reloadGame);
 start.addEventListener("click", startGame);
