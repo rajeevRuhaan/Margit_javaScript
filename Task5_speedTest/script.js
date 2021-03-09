@@ -1,6 +1,11 @@
 let dot = document.querySelectorAll(".dot");
 let scoredisplay = document.querySelector("#score");
 let overlay = document.getElementById("result");
+let gameover = document.getElementById("gameover");
+let start = document.getElementById("start");
+
+let close = document.getElementById("close");
+
 count = 0;
 let active = 0;
 
@@ -27,14 +32,39 @@ const clicked = (i) => {
   count++;
   scoredisplay.textContent = `Your score is ${count}`;
 };
+
 const getRandonInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
+const startGame = () => {
+  console.log("Game Started");
+
+  let nextActive = pickNext(active);
+
+  dot[nextActive].classList.toggle("active");
+  dot[active].classList.remove("active");
+
+  active = nextActive;
+  timer = setTimeout(startGame, 1000);
+
+  function pickNext(active) {
+    let nextActive = getRandonInt(0, 3);
+    if (nextActive != active) {
+      return nextActive;
+    } else pickNext(active);
+  }
+};
 const endgame = () => {
+  clearTimeout(timer);
   console.log("game over");
   overlay.style.visibility = "visible";
+  gameover.textContent = `Your score is ${score}`;
 };
-const close = () => {
+const reloadGame = () => {
+  console.log("close");
   window.location.reload();
 };
+
+close.addEventListener("click", reloadGame);
+start.addEventListener("click", startGame);
