@@ -3,7 +3,7 @@ let scoredisplay = document.querySelector("#score");
 let overlay = document.getElementById("result");
 let gameover = document.getElementById("gameover");
 let start = document.getElementById("start");
-
+let stop = document.getElementById("stop");
 let close = document.getElementById("close");
 
 count = 0;
@@ -40,15 +40,21 @@ const getRandonInt = (min, max) => {
 const startGame = () => {
   console.log("Game Started");
 
-  let nextActive = pickNext(active);
+  let nextActive = pickNext();
+  console.log(dot[nextActive]);
+
+  if (clicked() != nextActive) {
+    return endgame();
+  }
 
   dot[nextActive].classList.toggle("active");
   dot[active].classList.remove("active");
 
   active = nextActive;
+  console.log(active);
   timer = setTimeout(startGame, 1000);
 
-  function pickNext(active) {
+  function pickNext() {
     let nextActive = getRandonInt(0, 3);
     if (nextActive != active) {
       return nextActive;
@@ -59,6 +65,7 @@ const endgame = () => {
   clearTimeout(timer);
   console.log("game over");
   overlay.style.visibility = "visible";
+
   gameover.textContent = `Your score is ${score}`;
 };
 const reloadGame = () => {
@@ -66,5 +73,11 @@ const reloadGame = () => {
   window.location.reload();
 };
 
+const stopGame = () => {
+  console.log("close");
+  window.location.reload();
+};
+
+stop.addEventListener("click", stopGame);
 close.addEventListener("click", reloadGame);
 start.addEventListener("click", startGame);

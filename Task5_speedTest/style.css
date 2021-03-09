@@ -53,7 +53,7 @@ body {
   align-items: center;
 }
 .gameoverbox button {
-  background-color: chartreuse;
+  background-color: transparent;
   position: absolute;
   top: 0;
   right: 0;
