@@ -8,6 +8,7 @@ let close = document.getElementById("close");
 
 let count = 0;
 let active = 0;
+let missed = 0;
 var mySound;
 
 /* dot.forEach(function (event) {
@@ -34,7 +35,7 @@ dot[3].onclick = function () {
 const clicked = (i) => {
   console.log("clicked:", i);
   count++;
-
+  missed = 0;
   scoredisplay.textContent = `Your score is ${count}`;
   if (i != active) {
     return endgame();
@@ -67,6 +68,7 @@ myStop = new sound("endGame.mp3");
 /**Start game */
 const startGame = () => {
   console.log("Game Started");
+  console.log("missed:", missed);
   mySound.play();
   /***   pointer auto */
   for (let i = 0; i < dot.length; i++) {
@@ -91,12 +93,14 @@ const startGame = () => {
     if (nextActive != active) {
       return nextActive;
     } else {
-      pickNext(active);
+      return pickNext(active);
     }
   }
-  /*  if (clicked() != active) {
+
+  if (missed === 3) {
     return endgame();
-  } */
+  }
+  missed++;
 };
 const endgame = () => {
   clearTimeout(timer);
@@ -104,8 +108,17 @@ const endgame = () => {
   myStop.play();
   console.log("game over");
   overlay.style.visibility = "visible";
-
-  gameover.textContent = `Your score is ${count}`;
+  if (count < 5) {
+    gameover.textContent = `Your score is ${count}. Practice more`;
+  } else if (count < 10) {
+    gameover.textContent = `Your score is ${count}. You can do better`;
+  } else if (count < 15) {
+    gameover.textContent = `Well Played! Your score is ${count}. You can do better`;
+  } else if (count < 15) {
+    gameover.textContent = `Awesome! Your score is ${count}.`;
+  } else {
+    gameover.textContent = `You are Master! Your score is ${count}.`;
+  }
 };
 const reloadGame = () => {
   console.log("close");
