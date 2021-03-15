@@ -144,6 +144,6 @@ const stopGame = () => {
   window.location.reload();
 };
 
-/* stop.addEventListener("click", endgame); */
+stop.addEventListener("click", reloadGame);
 close.addEventListener("click", reloadGame);
 start.addEventListener("click", startGame);
