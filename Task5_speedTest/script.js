@@ -86,7 +86,17 @@ const startGame = () => {
   active = nextActive;
   console.log(active);
 
-  timer = setTimeout(startGame, 1000);
+  if (count < 5) {
+    timer = setTimeout(startGame, 1500);
+  } else if (count < 10) {
+    timer = setTimeout(startGame, 1300);
+  } else if (count < 15) {
+    timer = setTimeout(startGame, 1100);
+  } else if (count < 20) {
+    timer = setTimeout(startGame, 900);
+  } else {
+    timer = setTimeout(startGame, 800);
+  }
 
   function pickNext(active) {
     let nextActive = getRandonInt(0, 3);
@@ -109,7 +119,7 @@ const endgame = () => {
   console.log("game over");
   overlay.style.visibility = "visible";
   if (count < 5) {
-    gameover.textContent = `Your score is ${count}. Practice more`;
+    gameover.textContent = `Your score is ${count}. Practice more!!!`;
   } else if (count < 10) {
     gameover.textContent = `Your score is ${count}. You can do better`;
   } else if (count < 15) {
