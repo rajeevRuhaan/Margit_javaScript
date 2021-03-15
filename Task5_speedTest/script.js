@@ -1,3 +1,4 @@
+let username = prompt("Before start game, please enter your name:");
 let dot = document.querySelectorAll(".dot");
 let scoredisplay = document.querySelector("#score");
 let overlay = document.getElementById("result");
@@ -5,6 +6,7 @@ let gameover = document.getElementById("gameover");
 let start = document.getElementById("start");
 let stop = document.getElementById("stop");
 let close = document.getElementById("close");
+let name = document.getElementById("Name");
 
 let count = 0;
 let active = 0;
@@ -118,7 +120,9 @@ const endgame = () => {
   myStop.play();
   console.log("game over");
   overlay.style.visibility = "visible";
+
   if (count < 5) {
+    name.textContent = `${username}`;
     gameover.textContent = `Your score is ${count}. Practice more!!!`;
   } else if (count < 10) {
     gameover.textContent = `Your score is ${count}. You can do better`;
