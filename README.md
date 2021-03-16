@@ -21,7 +21,15 @@ Description: -Military age check : This program ask user age and check whether h
             - Calculate BMI (Body Mass Index )
             - Salary calculator: using salay per hour and total hour the program calculate salary.
 
-3. ** **
+3. **Task3_array** 
+    Description: Insert car data and add to local repo and search car by licence plate no.
+
+    ```js let carArray =[]; // //new array for object
+const addCar = (event) => {  }```
+
+https://user-images.githubusercontent.com/64234438/111297718-97fa3a00-8656-11eb-8d9a-6c8cc9a4d805.png
+
+
             
 Welcome to event count down page.
 the program calculate how many days left for event and also count business day.
