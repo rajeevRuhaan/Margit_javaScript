@@ -19,7 +19,9 @@ Description: -Military age check : This program ask user age and check whether h
             -Find Odd and Even number: user input number and the program display whether it is odd or even.
 
             - Calculate BMI (Body Mass Index )
-            - Salary calculator: using salay per hour and total hour the program calculate salary.
+            - Salary calculator: using salay per hour and total hour the program calculate salary. first 7 hours by hourly salary
+            -  next 2 hours 50% extra
+            -  rest of the hours 100% extra
 
 3. **Task3_array** 
     Description: Insert car data and add to local repo and search car by licence plate no.
@@ -27,13 +29,27 @@ Description: -Military age check : This program ask user age and check whether h
     ```javascript 
     let carArray =[]; //new array for object
 const addCar = (event) => {  
-    
+
 }```
 
 https://user-images.githubusercontent.com/64234438/111297718-97fa3a00-8656-11eb-8d9a-6c8cc9a4d805.png
 
+4. **Task4_mobileresponsive**
+    description: on scroll header color change. on mobile resbonsive nav element hide and mobilemenu icon display. On click mobile menu icon display nav elements
+    
 
-            
-Welcome to event count down page.
-the program calculate how many days left for event and also count business day.
-The program also stat countdown timer
+5. **Task4_TimeAndDate**         
+    Description: Welcome to event count down page.
+                The program calculate how many days left for event and also count business day.
+                The program also stat countdown timer
+
+
+6. **Task5_speedTest**
+    description: This is game app. 
+    The game starts with music and end with end music. game also have different speed level. the game allows user to inpute their name. 
+    The game end if user missed three chance.
+
+
+7. **Task6_backgroundgenerator**
+
+    description: Generate custome gradient background
