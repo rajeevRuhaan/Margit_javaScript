@@ -24,21 +24,21 @@ footer {
 
 .bg {
   background-color: #33333380;
-  padding: 1rem;
-  color: white;
+  
 }
 
-.bg a {
+/* .bg a {
   color: white;
-}
+} */
 /*Header*/
 header {
+  height: 100px;
   display: flex;
   justify-content: space-between;
   position: fixed;
   background-color: rgb(247, 241, 241);
   width: 100%;
-  top: 0%;
+  top: 0;
 }
 #mobileButton {
   display: none;
@@ -48,12 +48,12 @@ nav ul {
 }
 nav ul li {
   display: inline-block;
-  text-decoration: none;
+  
 }
 
 section {
   min-height: 50vh;
-  scroll-margin-top: 4rem;
+  scroll-margin-top: 5rem;
 }
 section:first-child {
   margin-top: 80px;
@@ -84,7 +84,13 @@ footer {
 }
 
 @media (max-width: 576px) {
+  #mobileButton {
+    display: block;
+    background-color: transparent;
+    border: none;
+  }
   nav ul {
+    display: none;
     background-color: gray;
     position: absolute;
     width: 100%;
@@ -99,10 +105,10 @@ footer {
     left: 0;
     top: 86px;
   }
-  nav ul li {
+  nav.responsive ul li {
     display: block;
   }
-  nav ul li a {
+  nav.responsive ul li a {
     display: block;
     padding: 1rem 2rem;
   }
