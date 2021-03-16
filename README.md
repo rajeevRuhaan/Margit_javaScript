@@ -25,8 +25,7 @@ Description: -Military age check : This program ask user age and check whether h
     Description: Insert car data and add to local repo and search car by licence plate no.
 
     ```javascript 
-    let carArray =[];``` //new array for object
-```
+    let carArray =[]; //new array for object
 const addCar = (event) => {  
     
 }```
