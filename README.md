@@ -7,7 +7,9 @@ Description: The program asks the price of the gasoline and amount of money from
             The program calculate how much gasolin the user gets with the money.
 
 
-            Js uses "document.getElementById" and use math to calculate how much gas the user will get.
+            Js uses ```document.getElementById``` and use math to calculate how much gas the user will get.
+
+https://user-images.githubusercontent.com/64234438/111292015-6bdbba80-8650-11eb-95a8-3647d4d48fe9.png
 
 
 2. 
