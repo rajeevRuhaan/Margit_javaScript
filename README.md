@@ -24,8 +24,11 @@ Description: -Military age check : This program ask user age and check whether h
 3. **Task3_array** 
     Description: Insert car data and add to local repo and search car by licence plate no.
 
-    ```js let carArray =[]; // //new array for object
-const addCar = (event) => {  }```
+    ```javascript 
+    let carArray =[]; //new array for object
+const addCar = (event) => {  
+    
+}```
 
 https://user-images.githubusercontent.com/64234438/111297718-97fa3a00-8656-11eb-8d9a-6c8cc9a4d805.png
 
