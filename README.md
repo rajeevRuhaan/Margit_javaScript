@@ -7,12 +7,22 @@ Description: The program asks the price of the gasoline and amount of money from
             The program calculate how much gasolin the user gets with the money.
 
 
-            Js uses ```document.getElementById``` and use math to calculate how much gas the user will get.
+            Js uses "document.getElementById" and use math to calculate how much gas the user will get.
 
 https://user-images.githubusercontent.com/64234438/111292015-6bdbba80-8650-11eb-95a8-3647d4d48fe9.png
 
 
-2. 
+2. **Task2-ifElsePractice**
+Description: -Military age check : This program ask user age and check whether he/she is valid for military age or not.
+            -sum of the input number: user need to input three number and the program make it sum.
+
+            -Find Odd and Even number: user input number and the program display whether it is odd or even.
+
+            - Calculate BMI (Body Mass Index )
+            - Salary calculator: using salay per hour and total hour the program calculate salary.
+
+3. ** **
+            
 Welcome to event count down page.
 the program calculate how many days left for event and also count business day.
 The program also stat countdown timer
